@@ -1,0 +1,44 @@
+{
+  "name": "pi-x-research",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Standalone Pi extension: deep research over X and web using xAI native x_search/web_search.",
+  "keywords": [
+    "pi-package",
+    "pi-coding-agent",
+    "pi-extension",
+    "xai",
+    "x-search",
+    "deep-research"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulbrav/pi-x-research.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulbrav/pi-x-research/issues"
+  },
+  "homepage": "https://github.com/paulbrav/pi-x-research#readme",
+  "files": [
+    "extensions/",
+    "README.md"
+  ],
+  "pi": {
+    "extensions": [
+      "extensions/x-research/index.ts"
+    ]
+  },
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "latest",
+    "@types/node": "latest",
+    "typescript": "latest"
+  }
+}
