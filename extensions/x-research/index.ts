@@ -1,5 +1,6 @@
 import type { ExtensionAPI, ExtensionCommandContext } from "@earendil-works/pi-coding-agent";
 import { runXResearchWorkflow } from "./research-workflow.js";
+import { getXaiApiKey } from "./xai.js";
 import { createXResearchTools } from "./xai-tools.js";
 
 type ParsedArgs =
@@ -85,6 +86,13 @@ export default function (pi: ExtensionAPI) {
       }
       if (!parsed.question) {
         ctx.ui.notify("Usage: /x-research [--from YYYY-MM-DD] [--to YYYY-MM-DD] [--angles N] <question>", "warning");
+        return;
+      }
+
+      try {
+        getXaiApiKey();
+      } catch (error) {
+        ctx.ui.notify(error instanceof Error ? error.message : String(error), "error");
         return;
       }
 
